@@ -24,10 +24,14 @@ sigma = zeros(1, size(X, 2));
 %               each feature. 
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
-%       
+%      
 
-
-
+%calculate mu for all features except 1st one
+	for i=1:size(X,2),
+		mu(i)=mean(X(:,i));
+		sigma(i)=std(X(:,i));
+		X_norm(:,i)=(X(:,i)-mu(i))/(sigma(i));
+	
 
 
 
