@@ -19,7 +19,12 @@ grad = zeros(size(theta));
 %
 % Note: grad should have the same dimensions as theta
 %
+h=sigmoid(X*theta);
 
+blue=(-y).*log(h);
+orange=(1-y).*(log(1-h));
+J=(1/m).*sum(blue-orange);
+grad=(1/m).*(X')*(h-y);
 
 
 
